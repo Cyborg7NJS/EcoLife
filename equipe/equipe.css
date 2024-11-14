@@ -1,0 +1,218 @@
+*{
+    cursor: url("../img/Cursor.png");
+}
+
+.team{
+    cursor: url("../img/Cursor-a.png");
+}
+
+.team-section {
+    background-color: white;
+    margin: 20px auto;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    cursor: url("../img/Cursor.png");
+}
+
+.team-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #1b5e20;
+    text-align: center;
+}
+
+/* Container dos membros da equipe */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+/* Card do membro da equipe */
+.team-member {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    position: relative; /* Para posicionar o botão "+" corretamente */
+    cursor: url("../img/Cursor-a.png");
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem do membro */
+.team-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Informações do membro */
+.team-member h3 {
+    color: #2e7d32;
+    margin: 10px 0;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.team-member p {
+    color: #4caf50;
+    margin: 8px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+        gap: 15px;
+    }
+    
+    .team-section {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .team-member img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
+        gap: 10px;
+    }
+    
+    .team-section {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .team-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .team-member {
+        padding: 10px;
+    }
+
+    .team-member img {
+        height: 150px;
+        margin-bottom: 10px;
+    }
+
+    .team-member h3 {
+        font-size: 0.9em;
+        margin: 5px 0;
+    }
+
+    .team-member p {
+        font-size: 0.8em;
+        margin: 5px 0;
+    }
+}
+
+/* Ajuste adicional para telas muito pequenas */
+@media (max-width: 400px) {
+    .team-member img {
+        height: 120px;
+    }
+
+    .team-member h3 {
+        font-size: 0.8em;
+    }
+
+    .team-member p {
+        font-size: 0.7em;
+    }
+
+    .team-section h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Estilo dos botões sociais */
+.social-buttons {
+    position: absolute;
+    top: 55px; /* Ajustado para aparecer abaixo do botão "+" */
+    right: 10px;
+    display: none; /* Inicialmente escondido */
+    flex-direction: column; /* Para empilhar os ícones */
+    gap: 10px; /* Espaçamento entre os ícones */
+    transition: opacity 0.3s ease; /* Animação suave */
+    z-index: 9; /* Para garantir que fique acima de outros elementos */
+}
+
+.team-member.active .social-buttons {
+    display: flex; /* Mostrar os ícones quando ativo */
+    opacity: 1; /* Para animação suave */
+}
+
+.social-btn {
+    width: 40px; /* Tamanho dos ícones */
+    height: 40px; /* Tamanho dos ícones */
+    border-radius: 50%; /* Botão circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cdffd8; /* Cor de fundo do botão */
+    color: white; /* Cor do ícone */
+    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+}
+
+.social-btn:hover {
+    transform: scale(1.1); /* Efeito ao passar o mouse */
+}
+
+.add-button {
+    position: absolute;
+    top: 10px; /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+    width: 40px; /* Tamanho do botão "+" */
+    height: 40px; /* Tamanho do botão "+" */
+    border-radius: 50%; /* Botão circular */
+    background-color: #2e7d32; /* Cor do botão */
+    color: white; /* Cor do texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+    z-index: 10; /* Para garantir que fique sobre outros elementos */
+}
+
+.add-button:hover {
+    transform: scale(1.1); /* Efeito ao passar o mouse */
+}
+
+.social-btn img {
+    width: 40px;    /* Largura fixa */
+    height: 40px;   /* Altura fixa */
+    object-fit: cover;  /* Garante que a imagem cubra todo o espaço */
+    border-radius: 50%; /* Mantém o formato circular */
+}
+
+.social-btn {
+    padding: 0;     /* Remove qualquer preenchimento */
+    background: none; /* Remove o fundo padrão */
+    border: none;   /* Remove qualquer borda */
+}
+
+a{
+    text-decoration: none;
+    cursor: url("../img/Cursor-a.png");
+}

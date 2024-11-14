@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe - EcoLife</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="equipe.css">
+    <link rel="shortcut icon" href="logo_site.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="../img/Header img.png" alt="Imagem de cabeçalho sobre meio ambiente" class="header-image">
+    </header>
+
+    <nav id='menu'>
+        <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+        <ul>
+            <li><a href='../index.html'>Voltar</a></li>
+        </ul>
+    </nav>
+
+    <section class="team-section">
+        <h2>Nosso Time</h2>
+        <div class="team">
+        <div class="team-container">
+            <a href="https://www.instagram.com/victin.ss" target="_blank"><div class="team-member">
+                <img src="../img/Sudré.png" alt="Participante 1">
+                <h3>Victor Sudré Silva</h3>
+                <p>Estudante técnico do 1º ano</p>
+                <p>Interessado em desenvolvimento sustentável e na tecnologia do futuro.</p>
+            </div>
+        </a>
+
+            <a href="https://www.instagram.com/cadu._.fernandes" target="_blank"><div class="team-member">
+                <img src="../img/Cadu.png" alt="Participante 2">
+                <h3>Carlos Eduardo Ribeiro Fernandes</h3>
+                <p>Estudante técnico do 1º ano</p>
+                <p>Focado em soluções de impacto social e apaixonado por inovações ambientais.</p>
+            </div>
+        </a>
+
+            <a href="https://www.instagram.com/gui08xz" target="_blank"><div class="team-member">
+                <img src="../img/Guilherme.png" alt="Participante 3">
+                <h3>Guilherme de Oliveira Pires</h3>
+                <p>Estudante técnico do 1º ano</p>
+                <p>Engajado em projetos de reciclagem e otimização de recursos naturais.</p>
+            </div>
+        </a>
+
+            <a href="https://www.instagram.com" target="_blank"><div class="team-member">
+                <img src="../img/Nicolas.png" alt="Participante 4">
+                <h3>Nicolas Britto Gomes da Silva</h3>
+                <p>Estudante técnico do 1º ano</p>
+                <p>Interesses em tecnologia verde, energias renováveis e preservação ambiental.</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="../img/Logo EcoLife.png" alt="Logo EcoLife" width="30" height="30">
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: contact.ecolife.mail@gmail.com</p>
+                    <p>Tel: (11) 97229-6102</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoLife. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function updatemenu() {
+            if (document.getElementById('responsive-menu').checked == true) {
+                document.getElementById('menu').style.borderBottomRightRadius = '0';
+                document.getElementById('menu').style.borderBottomLeftRadius = '0';
+            } else {
+                document.getElementById('menu').style.borderRadius = '10px';
+            }
+        }
+
+        document.querySelectorAll('.add-button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.stopPropagation(); // Previne que o evento se propague
+                const member = this.closest('.team-member');
+                
+                // Fecha todos os outros botões sociais
+                document.querySelectorAll('.team-member').forEach(m => {
+                    if (m !== member) {
+                        m.classList.remove('active');
+                    }
+                });
+                
+                // Alterna a classe ativa no membro atual
+                member.classList.toggle('active');
+            });
+        });
+
+        // Fecha os botões sociais quando clicar fora
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.team-member')) {
+                document.querySelectorAll('.team-member').forEach(member => {
+                    member.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>''
